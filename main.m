@@ -1,6 +1,5 @@
-%%%%%%%%%%%%%%%%%%%%%%
 % Data Understanding %
-%%%%%%%%%%%%%%%%%%%%%%
+
 
 % Load NIST data set
 data_set = prnist(0:9, 1:1000);
@@ -15,9 +14,11 @@ show(data_set(1:1000))
 show(data_set(1))
 
 
-%%%%%%%%%%%%%%%%%%%%
+
+
+
 % Data Preparation %
-%%%%%%%%%%%%%%%%%%%%
+
 
 % Add rows/columns to make images square
 data_set = im_box(data_set, 0, 1);
