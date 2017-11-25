@@ -1,13 +1,19 @@
-% Function for data preparation
+%DATA_PREPARATION Function for data preparation
+% 
+%  [A, B] = DATA_PREPARATION(X, N)
+%  
 %
 % INPUT
-%   data_set        Data set input
-%   pixel_size      New pixel size (height and width)
+%   X    Dataset
+%   N    Desired size (N x N)
 %
 % OUTPUT
-%   training        Training set
-%   test            Test set
+%   A    Training set
+%   B    Test set
 %
+% DESCRIPTION
+% Perform data preparation. This part consists of making images square,
+% resize images, and generating training and test set from the whole data.
 
 function [training, test] = data_preparation(data_set, pixel_size)
 
