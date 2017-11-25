@@ -14,6 +14,9 @@
 % DESCRIPTION
 % Perform data preparation. This part consists of making images square,
 % resize images, and generating training and test set from the whole data.
+%
+% SEE ALSO (<a href="http://37steps.com/prtools">PRTools Guide</a>)
+% IM_BOX, IM_RESIZE, GENDAT
 
 function [training, test] = data_preparation(data_set, pixel_size)
 
