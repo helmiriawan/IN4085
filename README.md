@@ -13,3 +13,12 @@ object per class) and should have at least 25% test error.
 ## Data set
 Data set for this assignment is standard data set of handwritten digits by
 [US National Institute of Standards & Technology (NIST)](http://www.nist.gov/).
+
+## Functions
+Please add the `functions` directory to your MATLAB path before run the scripts.
+You can do that by using `addpath` statement. For example, use command below
+to add `home/username/functions` to your path.
+
+```
+addpath home/username/functions
+```
