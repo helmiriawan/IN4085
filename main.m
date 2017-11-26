@@ -2,16 +2,16 @@
 
 
 % Load NIST data set
-data_set = prnist(0:9, 1:400);
+data_file = prnist(0:9, 1:400);
 
 % Show sample data
-show(data_set(1:40:4000))
+show(data_file(1:40:4000))
 
 % Show data of first class
-show(data_set(1:400))
+show(data_file(1:400))
 
 % Show single image
-show(data_set(1))
+show(data_file(1))
 
 
 
@@ -20,7 +20,7 @@ show(data_set(1))
 % Data Preparation %
 
 % Using self-made function
-[training, test] = data_preparation(data_set, 20);
+[training, test] = data_preparation(data_file, 20);
 
 
 
@@ -28,10 +28,13 @@ show(data_set(1))
 
 % Modeling %
 
+% Generate feature curve
+feature_curve = clevalf(training, nmc, [], [], 1, test);
+plote(feature_curve);
+
 
 % Train classifier
 classifier = nmc(training);
 
 % Evaluate classifier
 testc(test, classifier)
-
