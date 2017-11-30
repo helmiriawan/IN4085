@@ -29,9 +29,7 @@ show(data_file(1))
 % Modeling %
 
 % Generate feature curve
-feature_curve = clevalf(training, nmc, [], [], 1, test);
-plote(feature_curve);
-
+feature_curve(training, test, [40:40:400])
 
 % Train classifier
 classifier = nmc(training);

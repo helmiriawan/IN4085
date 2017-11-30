@@ -8,8 +8,8 @@
 %   N    Desired size (N x N)
 %
 % OUTPUT
-%   A    Training set
-%   B    Test set
+%   A    Training set.
+%   B    Test set.
 %
 % DESCRIPTION
 % Perform data preparation. This part consists of making images square,
