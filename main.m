@@ -32,7 +32,7 @@ show(data_file(1))
 feature_curve(training, test, [40:40:400])
 
 % Train classifier
-classifier = nmc(training);
+classifier = knnc(training, 1);
 
 % Evaluate classifier
 testc(test, classifier)
