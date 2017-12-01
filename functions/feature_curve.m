@@ -23,13 +23,13 @@
 
 function graphics = feature_curve(training, test, size)
 
-    % Generate feature curve with Nearest Mean Classifier
+    % Generate feature curve with Nearest Mean classifier
     nmc_curve = clevalf(training, nmc, size, [], 1, test);
     
-    % Generate feature curve with Linear Bayes Normal Classifier
+    % Generate feature curve with Linear Bayes Normal classifier
     ldc_curve = clevalf(training, ldc, size, [], 1, test);
     
-    % Generate feature curve with Quadratic Bayes Normal Classifier
+    % Generate feature curve with Quadratic Bayes Normal classifier
     qdc_curve = clevalf(training, qdc, size, [], 1, test);
     
     % Generate feature curve with Fisher's linear classifier
