@@ -36,4 +36,4 @@ prwarning off;
 holdout(training, test)
 
 % Generate feature curves
-feature_curve(training, test, [40:40:400])
+feature_curve(training, test, 40:40:400)
