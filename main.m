@@ -13,6 +13,9 @@ show(data_file(1:400))
 % Show single image
 show(data_file(1))
 
+% Hide warning messages
+prwarning off;
+
 
 
 
@@ -28,11 +31,9 @@ show(data_file(1))
 
 % Modeling %
 
-% Generate feature curve
+
+% Estimate hold-out errors
+holdout(training, test)
+
+% Generate feature curves
 feature_curve(training, test, [40:40:400])
-
-% Train classifier
-classifier = knnc(training, 1);
-
-% Evaluate classifier
-testc(test, classifier)
