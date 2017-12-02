@@ -95,15 +95,15 @@ function holdout(training, test)
 
     % Show the results
     fprintf('\nHold-out error\n-------------------\n');
-    fprintf('nmc\t\t: %2.2f (%2.1f s)\n', nmc_error, nmc_time);
-    fprintf('ldc\t\t: %2.2f (%2.1f s)\n', ldc_error, ldc_time);
-    fprintf('qdc\t\t: %2.2f (%2.1f s)\n', qdc_error, qdc_time);
-    fprintf('fisherc\t: %2.2f (%2.1f s)\n', fisherc_error, fisherc_time);
-    fprintf('loglc\t: %2.2f (%2.1f s)\n', loglc_error, loglc_time);
-    fprintf('1-nnc\t: %2.2f (%2.1f s)\n', k1nnc_error, k1nnc_time);
-    fprintf('3-nnc\t: %2.2f (%2.1f s)\n', k3nnc_error, k3nnc_time);
-    fprintf('parzenc\t: %2.2f (%2.1f s)\n', parzenc_error, parzenc_time);
-    fprintf('svc\t\t: %2.2f (%2.1f s)\n', svc_error, svc_time);
+    fprintf('nmc\t\t: %2.3f (%2.2f s)\n', nmc_error, nmc_time);
+    fprintf('ldc\t\t: %2.3f (%2.2f s)\n', ldc_error, ldc_time);
+    fprintf('qdc\t\t: %2.3f (%2.2f s)\n', qdc_error, qdc_time);
+    fprintf('fisherc\t: %2.3f (%2.2f s)\n', fisherc_error, fisherc_time);
+    fprintf('loglc\t: %2.3f (%2.2f s)\n', loglc_error, loglc_time);
+    fprintf('1-nnc\t: %2.3f (%2.2f s)\n', k1nnc_error, k1nnc_time);
+    fprintf('3-nnc\t: %2.3f (%2.2f s)\n', k3nnc_error, k3nnc_time);
+    fprintf('parzenc\t: %2.3f (%2.2f s)\n', parzenc_error, parzenc_time);
+    fprintf('svc\t\t: %2.3f (%2.2f s)\n', svc_error, svc_time);
     fprintf('\n');
     
 end
