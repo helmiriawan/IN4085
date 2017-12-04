@@ -40,10 +40,7 @@ function feature_curve(training, test, size)
     
     % Generate feature curve with 1-Nearest Neighbor classifier
     k1nnc_curve = clevalf(training, knnc([],1), size, [], 1, test);
-    
-    % Generate feature curve with 3-Nearest Neighbor classifier
-    k3nnc_curve = clevalf(training, knnc([],3), size, [], 1, test);
-    
+        
     % Generate feature curve with Parzen classifier
     parzenc_curve = clevalf(training, parzenc, size, [], 1, test);
     
@@ -55,7 +52,6 @@ function feature_curve(training, test, size)
         fisherc_curve
         loglc_curve
         k1nnc_curve
-        k3nnc_curve
         parzenc_curve
     ];
     

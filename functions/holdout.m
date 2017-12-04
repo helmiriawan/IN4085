@@ -22,6 +22,7 @@
 
 function holdout(training, test)
 
+
     % Parametric %
 
     % Train Nearest Mean classifier
@@ -54,19 +55,14 @@ function holdout(training, test)
     finish = clock;
     loglc_time = etime(finish, start);
 
+
     % Non-parametric %
-    
+
     % Train 1-Nearest Neighbor classifier
     start = clock;
     k1nnc_classifier = knnc(training, 1);
     finish = clock;
     k1nnc_time = etime(finish, start);
-
-    % Train 3-Nearest Neighbor classifier
-    start = clock;
-    k3nnc_classifier = knnc(training, 3);
-    finish = clock;
-    k3nnc_time = etime(finish, start);
 
     % Train Parzen classifier
     start = clock;
@@ -74,13 +70,6 @@ function holdout(training, test)
     finish = clock;
     parzenc_time = etime(finish, start);
     
-    % Advanced %
-    
-    % Train Support Vector classifier
-    start = clock;
-    svc_classifier = svc(training, 'radial_basis', 5);
-    finish = clock;
-    svc_time = etime(finish, start);
     
     % Test the classifiers
     nmc_error = testc(test, nmc_classifier);
@@ -89,9 +78,8 @@ function holdout(training, test)
     fisherc_error = testc(test, fisherc_classifier);
     loglc_error = testc(test, loglc_classifier);
     k1nnc_error = testc(test, k1nnc_classifier);
-    k3nnc_error = testc(test, k3nnc_classifier);
     parzenc_error = testc(test, parzenc_classifier);
-    svc_error = testc(test, svc_classifier);
+
 
     % Show the results
     fprintf('\nHold-out error\n-------------------\n');
@@ -101,9 +89,7 @@ function holdout(training, test)
     fprintf('fisherc\t: %2.3f (%2.2f s)\n', fisherc_error, fisherc_time);
     fprintf('loglc\t: %2.3f (%2.2f s)\n', loglc_error, loglc_time);
     fprintf('1-nnc\t: %2.3f (%2.2f s)\n', k1nnc_error, k1nnc_time);
-    fprintf('3-nnc\t: %2.3f (%2.2f s)\n', k3nnc_error, k3nnc_time);
     fprintf('parzenc\t: %2.3f (%2.2f s)\n', parzenc_error, parzenc_time);
-    fprintf('svc\t\t: %2.3f (%2.2f s)\n', svc_error, svc_time);
     fprintf('\n');
     
 end
