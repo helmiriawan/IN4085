@@ -21,7 +21,7 @@
 % SEE ALSO (<a href="http://37steps.com/prtools">PRTools Guide</a>)
 % CLEVALF, FISHERC, KNNC, LDC, LOGLC, NMC, PARZENC, PLOTE, QDC
 
-function graphics = feature_curve(training, test, size)
+function feature_curve(training, test, size)
 
     % Generate feature curve with Nearest Mean classifier
     nmc_curve = clevalf(training, nmc, size, [], 1, test);
