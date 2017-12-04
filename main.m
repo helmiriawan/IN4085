@@ -1,6 +1,5 @@
 % Data Understanding %
 
-
 % Load NIST data set
 data_file = prnist(0:9, 1:400);
 
@@ -20,20 +19,20 @@ prwarning off;
 
 
 
-% Data Preparation %
+% Investigate pixel size %
 
-% Using self-made function
-[training, test] = data_preparation(data_file, 20);
-
-
-
-
-
-% Modeling %
-
-
-% Estimate hold-out errors
+% 10x10
+[training, test] = data_preparation(data_file, 10);
+learning_curve(training, test, 200:200:2000)
 holdout(training, test)
 
-% Generate feature curves
-feature_curve(training, test, 40:40:400)
+% 20x20
+[training, test] = data_preparation(data_file, 20);
+learning_curve(training, test, 200:200:2000)
+holdout(training, test)
+
+% 30x30
+[training, test] = data_preparation(data_file, 30);
+learning_curve(training, test, 200:200:2000)
+holdout(training, test)
+
