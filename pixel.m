@@ -36,3 +36,11 @@ holdout(training, test)
 learning_curve(training, test, 200:200:2000)
 holdout(training, test)
 
+
+
+% Model optimization %
+
+% k-NN
+[training, test] = data_preparation(data_file, 20);
+gridsearch_knn(training, test, 1:10)
+
