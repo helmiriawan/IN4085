@@ -1,15 +1,12 @@
 %HOLDOUT_ERROR Function for generating hold out error and training time
 %taken
 % 
-%  E = HOLDOUT(A, S)
+%  HOLDOUT(A, S)
 %  
 %
 % INPUT
 %   A    Training data set.
 %   S    Independent test data set.
-%
-% OUTPUT
-%   E    Error / performance estimate
 %
 % DESCRIPTION
 % Estimate hold-out error of several types of classifiers with training 

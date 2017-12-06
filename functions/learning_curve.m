@@ -1,6 +1,6 @@
 %LEARNING_CURVE Function for generating learning curve
 % 
-%  I = LEARNING_CURVE(A, S, N)
+%  LEARNING_CURVE(A, S, N)
 %  
 %
 % INPUT
@@ -9,9 +9,6 @@
 %   N    Vector of training set sizes, used to generate subsets of A
 %        (default [2,3,5,7,10,15,20,30,50,70,100]). N is per class
 %        unless A has no priors set or has soft labels.
-%
-% OUTPUT
-%   G    Array of graphics handles.
 %
 % DESCRIPTION
 % Generate learning curves with several types of classifiers: Nearest Mean, 
