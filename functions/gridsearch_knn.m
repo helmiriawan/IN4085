@@ -13,15 +13,18 @@
 % to find the most suitable k for k-Nearest Neighbor classifier.
 %
 % SEE ALSO (<a href="http://37steps.com/prtools">PRTools Guide</a>)
-% KNNC
+% KNNC, TESTC
 
 function gridsearch_knn(training, test, list)
 
-    fprintf('\nk, error\n');
+    fprintf('\nk, error, training time\n');
     for k = list
+        start = clock;
         classifier = knnc(training, k);
+        finish = clock;
+        time = etime(finish, start);
         error = testc(test, classifier);
-        fprintf('%d, %1.3f\n', k, error);
+        fprintf('%d, %1.3f, %4.3f\n', k, error, time);
     end
     fprintf('\n');
 
