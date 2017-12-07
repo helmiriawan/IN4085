@@ -1,5 +1,4 @@
 %HOLDOUT_ERROR Function for generating hold out error and training time
-%taken
 % 
 %  HOLDOUT(A, S)
 %  

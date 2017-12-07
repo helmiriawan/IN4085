@@ -1,5 +1,4 @@
 %GRIDSEARCH_KNN Function to do grid search for k-nn classifier
-%taken
 % 
 %  GRIDSEARCH_KNN(A, S, N)
 %  
