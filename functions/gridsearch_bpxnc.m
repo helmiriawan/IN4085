@@ -1,5 +1,5 @@
 %GRIDSEARCH_BPXNC Function to do grid search for Back-propagation
-%Feed-forward Neural Network classiier
+%Feed-forward Neural Network classifier
 % 
 %  GRIDSEARCH_BPXNC(A, S, N)
 %  
