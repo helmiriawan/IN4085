@@ -21,7 +21,7 @@
 
 function gridsearch_svc(training, test, kernel, list)
 
-    fprintf('\nnodes, error, training time\n');
+    fprintf('\nregularization parameter, error, training time\n');
     for c = list
         start = clock;
         classifier = svc(training, kernel, c);
