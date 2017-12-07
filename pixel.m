@@ -40,10 +40,10 @@ holdout(training, test)
 
 % Model optimization %
 
-% k-NN
+% k-Nearest Neighbor
 [training, test] = data_preparation(data_file, 20);
 gridsearch_knn(training, test, 1:10)
 
-% Back-propagation feed-forward neural net classifier
+% Back-propagation Feed-forward Neural Network
 [training, test] = data_preparation(data_file, 20);
-gridsearch_bpxnc(training, test, 1:30, 1000)
+gridsearch_bpxnc(training, test, 5:5:50, 2000)
