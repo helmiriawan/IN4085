@@ -21,20 +21,13 @@ prwarning off;
 
 % Investigate pixel size %
 
-% 10x10
-[training, test] = data_preparation(data_file, 10);
-learning_curve(training, test, 200:200:2000)
-holdout(training, test)
+for pixel = [10 20 30]
+    [training, test] = data_preparation(data_file, pixel);
+    learning_curve(training, test, 200:200:2000)
+    holdout(training, test)
+end
 
-% 20x20
-[training, test] = data_preparation(data_file, 20);
-learning_curve(training, test, 200:200:2000)
-holdout(training, test)
 
-% 30x30
-[training, test] = data_preparation(data_file, 30);
-learning_curve(training, test, 200:200:2000)
-holdout(training, test)
 
 
 
