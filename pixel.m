@@ -33,14 +33,14 @@ end
 
 % Model optimization %
 
-% k-Nearest Neighbor
+% Data preparation
 [training, test] = data_preparation(data_file, 20);
-gridsearch_knn(training, test, 1:10)
+
+% k-Nearest Neighbor
+gridsearch(training, test, 'knnc', 1:10)
 
 % Back-propagation Feed-forward Neural Network
-[training, test] = data_preparation(data_file, 20);
-gridsearch_bpxnc(training, test, 5:5:50, 2000)
+gridsearch(training, test, 'bpxnc', 5:5:50, 2000)
 
 % Support Vector Machine 
-[training, test] = data_preparation(data_file, 20);
-gridsearch_svc(training, test, 'radial_basis', 1:10)
+gridsearch(training, test, 'svc', 1:10, [], 'radial_basis')
