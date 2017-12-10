@@ -1,4 +1,4 @@
-%DATA_PREPARATION Function for data preparation
+%MY_REP Function for data preparation
 % 
 %  [A, B] = DATA_PREPARATION(X, N)
 %  
@@ -12,13 +12,13 @@
 %   B    Test set.
 %
 % DESCRIPTION
-% Perform data preparation. This part consists of making images square,
-% resize images, and generating training and test set from the whole data.
+% Perform data preparation. This part consists of making images square and
+% resizing, and converting the result to prdataset.
 %
 % SEE ALSO (<a href="http://37steps.com/prtools">PRTools Guide</a>)
-% IM_BOX, IM_RESIZE, GENDAT
+% IM_BOX, IM_RESIZE, PRDATASET
 
-function [training, test] = data_preparation(data_file, pixel_size)
+function data_set = my_rep(data_file, pixel_size)
 
     % Add rows/columns to make images square
     data_file = im_box(data_file, 0, 1);
@@ -28,8 +28,5 @@ function [training, test] = data_preparation(data_file, pixel_size)
 
     % Convert prdatafile to prdataset
     data_set = prdataset(data_file, []);
-
-    % Split the data into training and test set
-    [training, test] = gendat(data_set, 0.5);
 
 end

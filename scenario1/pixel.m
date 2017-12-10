@@ -22,7 +22,8 @@ prwarning off;
 % Investigate pixel size %
 
 for pixel = [10 20 30]
-    [training, test] = data_preparation(data_file, pixel);
+    data_set = my_rep(data_file, pixel);
+    [training, test] = gendat(data_set, 0.5);
     learning_curve(training, test, 200:200:2000)
     holdout(training, test)
 end
@@ -34,7 +35,8 @@ end
 % Model optimization %
 
 % Data preparation
-[training, test] = data_preparation(data_file, 20);
+data_set = my_rep(data_file, 20);
+[training, test] = gendat(data_set, 0.5);
 
 % k-Nearest Neighbor
 gridsearch(training, test, 'knnc', 1:10)
