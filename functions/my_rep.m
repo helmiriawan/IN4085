@@ -1,18 +1,17 @@
 %MY_REP Function for data preparation
 % 
-%  [A, B] = DATA_PREPARATION(X, N)
+%  A = MY_REP(X, N)
 %  
 %
 % INPUT
-%   X    Dataset
+%   X    Data file
 %   N    Desired size (N x N)
 %
 % OUTPUT
-%   A    Training set.
-%   B    Test set.
+%   A    Data set.
 %
 % DESCRIPTION
-% Perform data preparation. This part consists of making images square and
+% Perform data preparation. This function consists of making images square,
 % resizing, and converting the result to prdataset.
 %
 % SEE ALSO (<a href="http://37steps.com/prtools">PRTools Guide</a>)
