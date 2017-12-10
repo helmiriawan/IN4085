@@ -1,6 +1,6 @@
 % Data Understanding %
 
-% Load NIST data set
+% Load NIST data file
 data_file = prnist(0:9, 1:400);
 
 % Show sample data
