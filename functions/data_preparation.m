@@ -1,6 +1,6 @@
-%MY_REP Function for data preparation
+%DATA_PREPARATION Function for data preparation
 % 
-%  A = MY_REP(X, N)
+%  A = DATA_PREPARATION(X, N)
 %  
 %
 % INPUT
@@ -17,7 +17,7 @@
 % SEE ALSO (<a href="http://37steps.com/prtools">PRTools Guide</a>)
 % IM_BOX, IM_RESIZE, PRDATASET
 
-function data_set = my_rep(data_file, pixel_size)
+function data_set = data_preparation(data_file, pixel_size)
 
     % Add rows/columns to make images square
     data_file = im_box(data_file, 0, 1);
