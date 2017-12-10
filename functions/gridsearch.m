@@ -37,9 +37,8 @@ function gridsearch(training, test, classifier, list, iteration, kernel)
             start = clock;
             classifier = knnc(training, k);
             finish = clock;
-            time = etime(finish, start);
             error = testc(test, classifier);
-            fprintf('%d, %1.3f, %4.3f\n', k, error, time);
+            fprintf('%d, %1.3f, %4.3f\n', k, error, etime(finish, start));
         end
         fprintf('\n');
 
@@ -50,9 +49,8 @@ function gridsearch(training, test, classifier, list, iteration, kernel)
             start = clock;
             classifier = bpxnc(training, n, iteration);
             finish = clock;
-            time = etime(finish, start);
             error = testc(test, classifier);
-            fprintf('%d, %1.3f, %4.3f\n', n, error, time);
+            fprintf('%d, %1.3f, %4.3f\n', n, error, etime(finish, start));
         end
         fprintf('\n');
 
@@ -63,9 +61,8 @@ function gridsearch(training, test, classifier, list, iteration, kernel)
             start = clock;
             classifier = svc(training, kernel, c);
             finish = clock;
-            time = etime(finish, start);
             error = testc(test, classifier);
-            fprintf('%d, %1.3f, %4.3f\n', c, error, time);
+            fprintf('%d, %1.3f, %4.3f\n', c, error, etime(finish, start));
         end
         fprintf('\n');
 
