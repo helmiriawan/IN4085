@@ -10,6 +10,11 @@ and at most 1000 objects per class) and should have lower than 5% test error.
 - the classifier is trained with smaller amount of training data (at most 10
 object per class) and should have at least 25% test error.
 
+## Software
+[PRtools](http://prtools.org/) version 5.3.2 is used in this assignment,
+based on the recommendation for this course. You can download the software from
+[here](http://37steps.com/software/).
+
 ## Data set
 Data set for this assignment is standard data set of handwritten digits by
 [US National Institute of Standards & Technology (NIST)](http://www.nist.gov/).
