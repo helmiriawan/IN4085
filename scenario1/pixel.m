@@ -39,10 +39,10 @@ data_set = data_preparation(data_file, 20);
 [training, test] = gendat(data_set, 0.5);
 
 % k-Nearest Neighbor
-gridsearch(training, test, 'knnc', 1:10)
+gridsearch(training, test, 'hold-out', 'knnc', 1:10)
 
 % Back-propagation Feed-forward Neural Network
-gridsearch(training, test, 'bpxnc', 5:5:50, 2000)
+gridsearch(training, test, 'hold-out', 'bpxnc', 5:5:50, 2000)
 
 % Support Vector Machine 
-gridsearch(training, test, 'svc', 1:10, [], 'radial_basis')
+gridsearch(training, test, 'hold-out', 'svc', 1:10, [], 'radial_basis')
