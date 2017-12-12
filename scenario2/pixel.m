@@ -24,7 +24,7 @@ data_set = data_preparation(data_file, 20);
 % k-Nearest Neighbor
 gridsearch(data_set, [], 'cross-validation', 'knnc', 1:10)
 
-% k-Nearest Neighbor
+% Back-propagation Feed-forward Neural Network
 gridsearch(data_set, [], 'cross-validation', 'bpxnc', 5:5:50, 2000)
 
 % Support Vector Machine 
