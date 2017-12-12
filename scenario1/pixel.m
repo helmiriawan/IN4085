@@ -38,10 +38,9 @@ data_set = data_preparation(data_file, 20);
 gridsearch(data_set, [], 'cross-validation', 'knnc', 1:10)
 
 % Back-propagation Feed-forward Neural Network
-data_file = prnist(0:9, 1:400);
+data_file = prnist(0:9, 1:250);
 data_set = data_preparation(data_file, 20);
-[training, test] = gendat(data_set, 0.5);
-gridsearch(training, test, 'hold-out', 'bpxnc', 5:5:50, 2000)
+gridsearch(data_set, [], 'cross-validation', 'bpxnc', 5:5:50, 2000)
 
 % Support Vector Machine
 data_file = prnist(0:9, 1:400);
