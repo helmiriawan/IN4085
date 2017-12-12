@@ -1,7 +1,7 @@
 % Data Understanding %
 
 % Load NIST data file
-data_file = prnist(0:9, 1:400);
+data_file = prnist(0:9, 1:250);
 
 % Show sample data
 show(data_file(1:40:4000))
@@ -23,9 +23,7 @@ prwarning off;
 
 for pixel = [10 20 30]
     data_set = data_preparation(data_file, pixel);
-    [training, test] = gendat(data_set, 0.5);
-    learning_curve(training, test, 200:200:2000)
-    holdout(training, test)
+    crossvalidation(data_set, 5, 10)
 end
 
 
@@ -34,15 +32,19 @@ end
 
 % Model optimization %
 
-% Data preparation
-data_set = data_preparation(data_file, 20);
-[training, test] = gendat(data_set, 0.5);
-
 % k-Nearest Neighbor
-gridsearch(training, test, 'hold-out', 'knnc', 1:10)
+data_file = prnist(0:9, 1:250);
+data_set = data_preparation(data_file, 20);
+gridsearch(data_set, [], 'cross-validation', 'knnc', 1:10)
 
 % Back-propagation Feed-forward Neural Network
+data_file = prnist(0:9, 1:400);
+data_set = data_preparation(data_file, 20);
+[training, test] = gendat(data_set, 0.5);
 gridsearch(training, test, 'hold-out', 'bpxnc', 5:5:50, 2000)
 
-% Support Vector Machine 
+% Support Vector Machine
+data_file = prnist(0:9, 1:400);
+data_set = data_preparation(data_file, 20);
+[training, test] = gendat(data_set, 0.5);
 gridsearch(training, test, 'hold-out', 'svc', 1:10, [], 'radial_basis')
