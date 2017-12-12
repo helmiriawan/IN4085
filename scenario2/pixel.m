@@ -1,6 +1,9 @@
 % Load NIST data file
 data_file = prnist(0:9, 1:10);
 
+% Hide warning messages
+prwarning off;
+
 
 
 
