@@ -24,9 +24,11 @@ function data_set = my_rep(data_file)
     data_file = im_box(data_file, 0, 1);
 
     % Resize images to 20x20 pixels
-    data_file = im_resize(data_file, [20 20]);
-
+    %data_file = im_resize(data_file, [20 20]);
+    data_file = im_resize(data_file, [128 128]);
+    
     % Convert prdatafile to prdataset
-    data_set = prdataset(data_file, []);
-
+    %data_set = prdataset(data_file, []);
+    data_set = im_features(data_file,data_file,'all');
+    
 end

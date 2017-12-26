@@ -10,8 +10,8 @@ prwarning off;
 
 % Investigate pixel size %
 
-for pixel = [10 20 30]
-    data_set = data_preparation(data_file, pixel);
+for i = [10 20 30]
+    data_set = data_preparation(data_file, i);
     crossvalidation(data_set, 5, 10)
 end
 
