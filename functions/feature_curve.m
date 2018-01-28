@@ -18,28 +18,28 @@
 % SEE ALSO (<a href="http://37steps.com/prtools">PRTools Guide</a>)
 % CLEVALF, FISHERC, KNNC, LDC, LOGLC, NMC, PARZENC, PLOTE, QDC
 
-function feature_curve(training, test, size)
+function feature_curve(training, size)
 
     % Generate feature curve with Nearest Mean classifier
-    nmc_curve = clevalf(training, nmc, size, [], 1, test);
+    nmc_curve = clevalf(training, nmc, size, 0.4, 5);
     
     % Generate feature curve with Linear Bayes Normal classifier
-    ldc_curve = clevalf(training, ldc, size, [], 1, test);
+    ldc_curve = clevalf(training, ldc, size, 0.4, 5);
     
     % Generate feature curve with Quadratic Bayes Normal classifier
-    qdc_curve = clevalf(training, qdc, size, [], 1, test);
+    qdc_curve = clevalf(training, qdc, size, 0.4, 5);
     
     % Generate feature curve with Fisher's linear classifier
-    fisherc_curve = clevalf(training, fisherc, size, [], 1, test);
+    fisherc_curve = clevalf(training, fisherc, size, 0.4, 5);
     
     % Generate feature curve with Logistic linear classifier
-    loglc_curve = clevalf(training, loglc, size, [], 1, test);
+    loglc_curve = clevalf(training, loglc, size, 0.4, 5);
     
     % Generate feature curve with 1-Nearest Neighbor classifier
-    k1nnc_curve = clevalf(training, knnc([],1), size, [], 1, test);
+    k1nnc_curve = clevalf(training, knnc([],1), size, 0.4, 5);
         
     % Generate feature curve with Parzen classifier
-    parzenc_curve = clevalf(training, parzenc, size, [], 1, test);
+    parzenc_curve = clevalf(training, parzenc, size, 0.4, 5);
     
     % Generate list of feature curves
     list = [
