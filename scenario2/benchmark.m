@@ -9,11 +9,12 @@ data_set = my_rep(data_file);
 
 % Compute the classifier
 start = clock;
-classifier = svc(data_set, 'radial_basis', 4);
+selected_features = featself(data_set, 'eucl-s', 100);
+classifier = selected_features*svc(data_set*selected_features, 'radial_basis', 2);
 finish = clock;
 
 % Evaluate the error classification
-error = nist_eval('my_rep', classifier, 10);
+error = nist_eval('my_rep', classifier, 100);
 
 % Show training time
 fprintf('%2.3f s\n', etime(finish, start));
