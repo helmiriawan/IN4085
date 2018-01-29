@@ -10,7 +10,6 @@ data_set = my_rep(data_file);
 % Compute the classifier
 start = clock;
 classifier = loglc(data_set);
-% classifier = svc(data_set, 'radial_basis', 6);
 finish = clock;
 
 % Evaluate the error classification
