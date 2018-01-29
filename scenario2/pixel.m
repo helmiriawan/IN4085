@@ -52,4 +52,4 @@ fprintf('%2.3f s\n', etime(finish, start));
 
 % Generate feature curve
 feature_curve = clevalf(data_set*selected_features, svc([], 'radial_basis', 4), [20:20:200], 0.4, 5);
-plote(feature_curve, [], [], [], 'noapperror');
+plote(feature_curve);
