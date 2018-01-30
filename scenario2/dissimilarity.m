@@ -7,11 +7,14 @@ figure,show(data_file)
 % Hide warning messages
 prwarning off;
 
+start = clock;
 % Investigate classifier based on Dissimilarity (euclidian distance)
 % data_set = dissimilarity_preparation(data_file,20,30,0);
 
 % Investigate classifier based on Dissimilarity (city-block)
 data_set = dissimilarity_preparation(data_file,20,30,1);
+finish = clock;
+fprintf('%2.3f s\n', etime(finish, start));
 
 crossvalidation(data_set, 5, 10)
 

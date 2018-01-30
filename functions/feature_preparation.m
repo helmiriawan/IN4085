@@ -26,6 +26,8 @@ function data_set = feature_preparation(data_file, pixel_size)
     data_file = im_resize(data_file, [pixel_size pixel_size]);
 
     % Obtain the features of NIST images
+    start = clock;
     data_set = im_features(data_file,data_file,'all');
-
+    finish = clock;
+    fprintf('%2.3f s\n', etime(finish, start));
 end

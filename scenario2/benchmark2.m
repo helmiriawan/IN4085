@@ -10,7 +10,28 @@ data_set = my_rep(data_file);
 % Compute the classifier
 start = clock;
 classifier = ldc(data_set);
-%classifier = svc(data_set, 'radial_basis', 4);
+finish = clock;
+
+% Compute the classifier
+start = clock;
+classifier = ldc(data_set);
+finish = clock;
+
+% Evaluate the error classification
+error = nist_eval('my_rep', classifier, 100);
+
+% Show training time
+fprintf('%2.3f s\n', etime(finish, start));
+
+
+
+
+
+% With feature reduction
+% Compute the classifier
+start = clock;
+selected_features = featself(data_set, 'eucl-s', 12);
+classifier = selected_features*ldc(data_set*selected_features);
 finish = clock;
 
 % Evaluate the error classification

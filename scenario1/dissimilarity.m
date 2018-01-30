@@ -27,3 +27,29 @@ data_file = prnist(0:9, 1:400);
 data_set = dissimilarity_preparation(data_file,20,30,0);
 [training, test] = gendat(data_set, 0.5);
 gridsearch(training, test, 'hold-out', 'svc', 1:10, [], 'radial_basis')
+
+
+
+% Feature reduction %
+
+% Load NIST data file
+data_file = prnist(0:9, 1:250);
+
+data_set = dissimilarity_preparation(data_file,20,30,0);
+
+% Get the best n features
+start = clock;
+n = 30;
+selected_features = featself(data_set, 'eucl-s', n);
+finish = clock;
+fprintf('%2.3f s\n', etime(finish, start));
+
+% Generate feature curve
+feature_curve_qdc = clevalf(data_set*selected_features, qdc, [1:1:30], 0.4, 5);
+plote(feature_curve);
+
+feature_curve_knnc = clevalf(data_set*selected_features, knnc([],1), [1:1:30], 0.4, 5);
+plote(feature_curve);
+
+feature_curve_parzenc = clevalf(data_set*selected_features, parzenc, [1:1:30], 0.4, 5);
+plote(feature_curve);
