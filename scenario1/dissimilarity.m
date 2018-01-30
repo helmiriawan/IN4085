@@ -45,11 +45,11 @@ finish = clock;
 fprintf('%2.3f s\n', etime(finish, start));
 
 % Generate feature curve
-feature_curve_qdc = clevalf(data_set*selected_features, qdc, [1:1:30], 0.4, 5);
+feature_curve_qdc = clevalf(data_set*selected_features, qdc, [1:1:30], 0.8, 5);
 plote(feature_curve);
 
-feature_curve_knnc = clevalf(data_set*selected_features, knnc([],1), [1:1:30], 0.4, 5);
+feature_curve_knnc = clevalf(data_set*selected_features, knnc([],1), [1:1:30], 0.8, 5);
 plote(feature_curve);
 
-feature_curve_parzenc = clevalf(data_set*selected_features, parzenc, [1:1:30], 0.4, 5);
+feature_curve_parzenc = clevalf(data_set*selected_features, parzenc, [1:1:30], 0.8, 5);
 plote(feature_curve);

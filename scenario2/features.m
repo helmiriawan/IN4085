@@ -40,7 +40,7 @@ finish = clock;
 fprintf('%2.3f s\n', etime(finish, start));
 
 % Generate feature curve
-feature_curve = clevalf(data_set*selected_features, ldc, [1:1:24], 0.4, 5);
+feature_curve = clevalf(data_set*selected_features, ldc, [1:1:24], 0.8, 5);
 plote(feature_curve);
 
 % Evaluate with cross validation
