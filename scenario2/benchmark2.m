@@ -35,7 +35,9 @@ classifier = selected_features*ldc(data_set*selected_features);
 finish = clock;
 
 % Evaluate the error classification
-error = nist_eval('my_rep', classifier, 100);
+error_ldc_100 = nist_eval('my_rep', classifier, 100);
+error_ldc_50 = nist_eval('my_rep', classifier, 50);
+error_ldc_10 = nist_eval('my_rep', classifier, 10);
 
 % Show training time
 fprintf('%2.3f s\n', etime(finish, start));
