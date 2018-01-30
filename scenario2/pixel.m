@@ -45,11 +45,11 @@ data_set = data_preparation(data_file, 20);
 
 % Get the best n features
 start = clock;
-n = 200;
+n = 400;
 selected_features = featself(data_set, 'eucl-s', n);
 finish = clock;
 fprintf('%2.3f s\n', etime(finish, start));
 
 % Generate feature curve
-feature_curve = clevalf(data_set*selected_features, svc([], 'radial_basis', 4), [20:20:200], 0.4, 5);
+feature_curve = clevalf(data_set*selected_features, svc([], 'radial_basis', 4), [40:40:400], 0.8, 5);
 plote(feature_curve);
