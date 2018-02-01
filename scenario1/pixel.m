@@ -47,3 +47,25 @@ data_file = prnist(0:9, 1:400);
 data_set = data_preparation(data_file, 20);
 [training, test] = gendat(data_set, 0.5);
 gridsearch(training, test, 'hold-out', 'svc', 1:10, [], 'radial_basis')
+
+
+
+
+
+% Feature reduction %
+
+% Data preparation
+data_file = prnist(0:9, 1:400);
+data_set = data_preparation(data_file, 20);
+[training, test] = gendat(data_set, 0.5);
+
+% Get the best n features
+start = clock;
+n = 400;
+selected_features = featself(data_set, 'eucl-s', n);
+finish = clock;
+fprintf('%2.3f s\n', etime(finish, start));
+
+% Generate feature curve
+feature_curve = clevalf(training*selected_features, svc([], 'radial_basis', 6), [40:40:400], [], 1, test*selected_features);
+plote(feature_curve);
