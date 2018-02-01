@@ -12,11 +12,6 @@ start = clock;
 classifier = ldc(data_set);
 finish = clock;
 
-% Compute the classifier
-start = clock;
-classifier = ldc(data_set);
-finish = clock;
-
 % Evaluate the error classification
 error = nist_eval('my_rep', classifier, 100);
 
