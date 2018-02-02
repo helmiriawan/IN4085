@@ -37,11 +37,19 @@ d = a*w;
 w2 = psem(d,30);
 data_set = d*w2;
 
+% combine with 1-nnc
+p = [qdc*classc knnc([],1) parzenc]*knnc([],1);
+w3 = data_set*p;
+
 % Compute the classifier
 start = clock;
-classifier = w*w2*qdc(data_set);
+% classifier = w*w2*qdc(data_set);
+classifier = w*w2*w3;
 finish = clock;
-
 
 % Compute error using test set
 error = test_set*classifier*testc;
+
+label_original = getlab(test_set);
+label_result = test_set*classifier*labeld;
+confmat(label_original,label_result)

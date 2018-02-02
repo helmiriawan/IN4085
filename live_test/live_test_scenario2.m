@@ -41,3 +41,7 @@ finish = clock;
 
 % Compute error using test set
 error = test_set*classifier*testc;
+
+label_original = getlab(test_set);
+label_result = test_set*classifier*labeld;
+confmat(label_original,label_result)

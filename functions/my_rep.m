@@ -20,8 +20,8 @@
 
 function data_set = my_rep(data_file)
 
-%     data_set = data_preparation(data_file, 20);
-    data_set = feature_preparation(data_file, 20);
+    data_set = data_preparation(data_file, 20);
+%     data_set = feature_preparation(data_file, 20);
 %     data_set = dissimilarity_preparation(data_file, 20, 30, 0);
 
 end

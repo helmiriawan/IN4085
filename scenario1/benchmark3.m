@@ -160,3 +160,41 @@ error100_parzenc = nist_eval('my_rep', classifier, 100);
 error50_parzenc = nist_eval('my_rep', classifier, 50);
 error10_parzenc = nist_eval('my_rep', classifier, 10);
 fprintf('%2.3f s\n', etime(finish, start));
+
+
+% Combine Classifiers %
+
+% Specify number of objects for training set (200-1000)
+number_of_objects = 400;
+
+% Retrieve NIST data file
+data_file = prnist(0:9, 1:number_of_objects);
+
+% Pre-process and convert data file to data set
+a = my_rep(data_file);
+w = proxm(a);	% euclidian distance	
+d = a*w;
+w2 = psem(d,30);
+data_set = d*w2;
+
+% combine with parzenc
+p = [qdc*classc knnc([],1) parzenc]*parzenc;
+w3 = data_set*p;
+
+% Compute the classifier
+start = clock;
+classifier = w*w2*w3;
+finish = clock;
+error = nist_eval('my_rep', classifier, 100);
+fprintf('%2.3f s\n', etime(finish, start));
+
+% combine with 1-nnc
+p = [qdc*classc knnc([],1) parzenc]*knnc([],1);
+w3 = data_set*p;
+
+start = clock;
+classifier = w*w2*w3;
+finish = clock;
+
+error = nist_eval('my_rep', classifier, 100);
+fprintf('%2.3f s\n', etime(finish, start));
