@@ -1,10 +1,11 @@
-# IN4085 - Pattern Recognition
+# Final Assignment - Pattern Recognition
 
-This is the repository for the final assignment. The goal of this assignment is
-to classify individual digits by using pattern recognition techniques.
+This is the repository for the final assignment of pattern recognition course.
+The goal of this assignment is to classify individual digits by making
+a classifier using pattern recognition techniques.
 
 ## Scenario
-There are two scenarios:
+There are two scenarios in this assignment that need to be solved:
 - the classifier is trained with large amount of training data (at least 200
 and at most 1000 objects per class) and should have lower than 5% test error.
 - the classifier is trained with smaller amount of training data (at most 10
