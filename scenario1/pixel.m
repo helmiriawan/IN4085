@@ -4,10 +4,10 @@
 data_file = prnist(0:9, 1:250);
 
 % Show sample data
-show(data_file(1:40:4000))
+show(data_file(1:25:2500))
 
 % Show data of first class
-show(data_file(1:400))
+show(data_file(1:250))
 
 % Show single image
 show(data_file(1))
